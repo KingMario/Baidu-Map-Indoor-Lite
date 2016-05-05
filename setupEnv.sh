@@ -12,6 +12,7 @@ apt-get install -y python-pip
 apt-get install -y libjpeg-dev
 apt-get install -y libfreetype6
 apt-get install -y python-dev python-setuptools
+apt-get install -y zlib1g-dev
 
 ## install pillow
 pip install pillow

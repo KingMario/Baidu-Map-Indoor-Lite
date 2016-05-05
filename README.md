@@ -18,7 +18,19 @@
 
 提供 [setupEnv.sh](setupEnv.sh) 用于 `Ubuntu` 系统下安装 mapCut.py 脚本所需要的运行环境。
 
-可进一步考虑使用 docker 打包部署图像切割服务。
+提供 DockerFile 创建 docker 运行环境，相关命令如下。
+
+安装并打开 Docker Quickstart Terminal
+* 使用 `docker build -t mapcutenv:1.0 .` 创建 docker image
+* 使用 `docker run -i -t mapcutenv /bin/bash` 进入该运行环境
+
+打开另一个 Docker Quickstart Terminal
+* 使用 `docker ps` 查看 container 的id。
+* 使用 `docker cp` 命令将 mapCut.py 文件拷贝到 container 的 ~/mapCut 目录
+* 使用 `docker cp` 命令将 待处理的图片文件 拷贝到 container 的 ~/mapCut 目录
+
+返回第一个 Docker Quickstart Terminal 中的运行环境
+* 按下一节说明执行 `mapCut.py` 命令
 
 ### 使用方法
 
