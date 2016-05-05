@@ -18,23 +18,6 @@
 
 提供 [setupEnv.sh](setupEnv.sh) 用于 `Ubuntu` 系统下安装 mapCut.py 脚本所需要的运行环境。
 
-提供 DockerFile 创建 docker 运行环境，相关命令如下。
-
-```bash
-docker pull kingmario/baidu-map-indoor-lite
-docker run -i -t --name mapcut -w /root/mapCut kingmario/baidu-map-indoor-lite
-## 按 ctrl-D 退出
-docker cp pic_b_2.jpg mapcut:/root/mapCut
-docker start mapcut
-docker attach mapcut
-## 执行 ./mapCut.py pic_b_2.jpg 命令
-## 按 ctrl-D 退出
-mkdir -p localFolder
-docker cp mapcut:/root/mapCut/precut localFolder
-docker cp mapcut:/root/mapCut/result localFolder
-docker rm mapcut
-```
-
 ### 使用方法
 
 `mapCut.py` 命令行格式如下：
@@ -54,9 +37,28 @@ maxz = int(max([2, math.ceil(min([math.log(w / 256, 2), math.log(h / 256, 2)]))]
 切割完成后，生成的文件保存在 precut 目录下，并以同名 json 文件保存相应的图像信息和切割信息到 result 目录。  
 一般情况切割均可成功；切割过程中若有异常会显示出错信息，此时，请检查所要切割的图像文件有无损坏。
 
+### 直接使用 Docker 镜像
+
+已打包开箱即用的 Docker 镜像，具体使用方法如下。
+
+```bash
+docker pull kingmario/baidu-map-indoor-lite
+docker run -i -t --name mapcut -w /root/mapCut kingmario/baidu-map-indoor-lite
+## 按 ctrl-D 退出
+docker cp pic_b_2.jpg mapcut:/root/mapCut
+docker start mapcut
+docker attach mapcut
+## 执行 ./mapCut.py pic_b_2.jpg 命令
+## 按 ctrl-D 退出
+mkdir -p localFolder
+docker cp mapcut:/root/mapCut/precut localFolder
+docker cp mapcut:/root/mapCut/result localFolder
+docker rm mapcut
+```
+
 ### HTML5 地图切割替代方案
 
-可以考虑使用 HTML5 画布实现实时地图切割，该替代方案可减少服务器上的空间占用和地图显示时的前后端交互，但有可能会影响到客户端性能，因此需要谨慎分析。
+可以考虑使用 HTML5 画布实现实时地图切割，该替代方案可减少服务器上的空间占用和地图显示时的前后端交互，但有可能会影响到客户端性能，且不能满足较大图像切割需求，因此需要谨慎分析。
 
 ## 室内地图显示
 
@@ -66,7 +68,7 @@ maxz = int(max([2, math.ceil(min([math.log(w / 256, 2), math.log(h / 256, 2)]))]
 ### 示例页面
 
 [示例页面](mapViewer.html)  
-使用的示例室内地图来自网络，如有侵权请告知。
+使用的示例室内平面图来自网络，如有侵权请告知。
 
 ### 获取经纬度坐标映射
 
@@ -80,7 +82,7 @@ maxz = int(max([2, math.ceil(min([math.log(w / 256, 2), math.log(h / 256, 2)]))]
 ### 示例页面
 
 [热力图示例](mapApplication.html)  
-使用的示例室内地图来自网络，如有侵权请告知。
+使用的示例室内平面图来自网络，如有侵权请告知。
 
 ## License
 
