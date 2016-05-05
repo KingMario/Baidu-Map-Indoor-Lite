@@ -27,7 +27,7 @@ docker run -i -t --name mapcut -w /root/mapCut kingmario/baidu-map-indoor-lite
 docker cp pic_b_2.jpg mapcut:/root/mapCut
 docker start mapcut
 docker attach mapcut
-## 执行 ./mapCut.py pic_b_2 命令
+## 执行 ./mapCut.py pic_b_2.jpg 命令
 ## 按 ctrl-D 退出
 mkdir -p localFolder
 docker cp mapcut:/root/mapCut/precut localFolder
