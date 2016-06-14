@@ -67,7 +67,7 @@ docker rm mapcut
 
 ### 示例页面
 
-[示例页面](mapViewer.html)  
+[示例页面](http://kingmario.github.io/Baidu-Map-Indoor-Lite/mapViewer.html)  
 使用的示例室内平面图来自网络，如有侵权请告知。
 
 ### 获取经纬度坐标映射
@@ -81,7 +81,7 @@ docker rm mapcut
 
 ### 示例页面
 
-[热力图示例](mapApplication.html)  
+[热力图示例](http://kingmario.github.io/Baidu-Map-Indoor-Lite/mapApplication.html)  
 使用的示例室内平面图来自网络，如有侵权请告知。
 
 ## License
