@@ -1,0 +1,13 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+#medimg {
+    width: 100%;
+    height: 95%
+}
+p {
+    margin: 5px;
+    font-size: 14px;
+}
