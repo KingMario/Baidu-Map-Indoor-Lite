@@ -12,6 +12,7 @@ RUN apt-get install -y python python-pip
 RUN apt-get install -y libjpeg-dev libfreetype6 python-dev python-setuptools
 RUN apt-get install -y zlib1g-dev
 RUN apt-get install -y curl
+RUN apt-get clean
 RUN pip install pillow
 RUN mkdir ~/mapCut
 RUN mkdir ~/mapCut/precut
