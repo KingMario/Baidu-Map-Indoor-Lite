@@ -10,4 +10,4 @@ MAINTAINER KingMario <gcyyq@hotmail.com>
 RUN apt-get update && apt-get install -y python python-pip libjpeg-dev libfreetype6 python-dev python-setuptools zlib1g-dev curl && apt-get clean && pip install pillow && mkdir ~/mapCut && mkdir ~/mapCut/precut && mkdir ~/mapCut/result && curl https://raw.githubusercontent.com/KingMario/Baidu-Map-Indoor-Lite/master/mapCut.py -o ~/mapCut/mapCut.py && chmod +x ~/mapCut/mapCut.py
 
 # Commands when creating a new container
-CMD /bin/bash
+ENTRYPOINT /bin/bash
